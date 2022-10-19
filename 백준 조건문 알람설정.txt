@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int Hour;
+		int Minute;
+//		int Alam_Hour;
+		int Alam_Minute;
+
+		Scanner sc = new Scanner(System.in);
+		Hour = sc.nextInt();
+		Minute = sc.nextInt();
+
+		if (Hour >= 0 && Hour <= 23 && Minute >= 0 && Minute <= 59) {
+
+			Alam_Minute = Minute - 45;
+			if (Alam_Minute < 0) {
+				Alam_Minute = 60 + Alam_Minute;// 60분에서 알람분만큼 빼준다.
+				Hour=Hour - 1;
+				if(Hour<0) {
+					Hour=23;
+				}
+			}
+//			Alam_Hour;
+			System.out.println(Hour + " " + Alam_Minute);
+		} 
+		else {
+			System.out.println("시간의 범위를 벗어났습니다.");
+		}
+
+	}
+}

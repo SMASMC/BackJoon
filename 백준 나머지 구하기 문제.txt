@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner =new Scanner(System.in);
+		int A;
+		int B;
+		int C;
+		A=scanner.nextInt();
+		B=scanner.nextInt();
+		C=scanner.nextInt();
+		int ABC[]= {A,B,C};
+		int ab[]= {((A+B)%C),(((A%C)+(B%C))%C),
+				((A*B)%C), ((A%C)*(B%C))%C};		
+		for(int i=0;i<ab.length;i++) {
+			
+			for(int j=0;j<ABC.length;j++) {
+				if(ABC[j]>=2&&ABC[j]<=10000) {
+					continue;
+				}
+				else {
+					return;
+				}
+			}
+			System.out.println(ab[i]);
+		}
+		
+	}
+}
